@@ -1,0 +1,422 @@
+.about {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(240, 147, 251, 0.05) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(240, 147, 251, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Intro Section */
+.about-intro {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.intro-card {
+  background: linear-gradient(135deg, var(--secondary-dark) 0%, rgba(102, 126, 234, 0.1) 100%);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  max-width: 800px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.intro-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transition: left 0.8s ease;
+}
+
+.intro-card:hover::before {
+  left: 100%;
+}
+
+.intro-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.intro-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.intro-card p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* About Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.about-card {
+  background: linear-gradient(135deg, var(--secondary-dark) 0%, rgba(102, 126, 234, 0.1) 100%);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 16px;
+  padding: 30px;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover::before {
+  transform: scaleX(1);
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.card-icon {
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.card-header h3 {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  font-weight: 700;
+  margin: 0;
+}
+
+.about-card p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.about-card strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.card-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.about-card:hover .card-accent {
+  opacity: 1;
+}
+
+/* Highlights Section */
+.about-highlights {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(240, 147, 251, 0.1) 100%);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+}
+
+.about-highlights h3 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+  background: rgba(102, 126, 234, 0.15);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.highlight-icon {
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.highlight-item span {
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Stats Section */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, var(--secondary-dark) 0%, rgba(102, 126, 234, 0.1) 100%);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent);
+  box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.stat-content {
+  position: relative;
+  z-index: 1;
+}
+
+.stat-card .stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.stat-card p {
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* CTA Section */
+.about-cta {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  border-radius: 20px;
+  padding: 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.8s ease;
+}
+
+.about-cta:hover::before {
+  transform: translateX(100%);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-content h3 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.cta-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.cta-button:hover {
+  background: white;
+  color: #667eea;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    gap: 40px;
+  }
+
+  .intro-card {
+    padding: 30px 20px;
+  }
+
+  .intro-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .intro-card p {
+    font-size: 1rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    padding: 25px;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-cta {
+    padding: 40px 20px;
+  }
+
+  .cta-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+}
